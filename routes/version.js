@@ -1,9 +1,8 @@
 const express = require('express');
+const ver = require('../controllers/version');
 const router = express.Router();
 
-router.get('/version',(req, res)=>{
-    res.status(200).json({'version':'0.0.1'});
-});
+router.get('/version',ver.version);
 
 
 module.exports = router;
