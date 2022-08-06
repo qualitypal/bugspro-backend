@@ -1,0 +1,27 @@
+{
+  "name": "bugsprobck",
+  "version": "0.0.1",
+  "description": "BugsPro Backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build":"babel *.js -d dist && babel ./routes/*.js -d dist/routes",
+    "start": "npm run build && node dist/index.js",
+    "clear": "rm -r dist"
+  },
+  "keywords": [
+    "bugs",
+    "defects",
+    "tracker"
+  ],
+  "author": "Shankar VR",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.18.10",
+    "@babel/preset-env": "^7.18.10"
+  }
+}
