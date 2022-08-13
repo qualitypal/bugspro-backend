@@ -6,15 +6,12 @@ test('Get Version', ()=> {
     .get('http://localhost:3000/version')
     .then(res => {
         version = res.data.version;
-        //console.log(res);
-        expect(version).toEqual('0.0.1');
+        //console.log(version);
+        expect(version).toEqual('0.0.2');
     })
     .catch(error => {
-        console.log(error);
+       // expect(version).toEqual('0.0.1');
     });
-
-    
-
 });
 
 
