@@ -8,6 +8,7 @@ const defects = require('./routes/defect');
 const express = require('express');
 const app = express();
 
+app.use(express.json());
 app.use('/',version);
 app.use('/defects',defects);
 
@@ -21,11 +22,6 @@ connectMongo().catch(err => {
     console.log(`Error connecting Mongo ${err.message}`);
 });
 
-const doc = new DefectModel({title:'Second bug',description:'First bug created in mongo'});
-doc.save().then(()=>{
-    console.log("Defect Saved");
-
-});
 
 async function connectMongo(){
     await mongoose.connect('mongodb://localhost:27017/test');
