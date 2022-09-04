@@ -5,12 +5,14 @@ import {DefectModel} from './models/defects';
 
 const version = require('./routes/version');
 const defects = require('./routes/defect');
+const users = require('./routes/user')
 const express = require('express');
 const app = express();
 
 app.use(express.json());
 app.use('/',version);
 app.use('/defects',defects);
+app.use('/user', users)
 
 app.get('/test')
 
